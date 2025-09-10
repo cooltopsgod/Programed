@@ -6,38 +6,31 @@ public class Menosas4 {
         String frs = input.nextLine();
         String maxplvr = "";
         String minplvr = "";
-
         System.out.println("PALAVRAS ENCONTRADAS\n====================");
-
         if (frs.length() > 4) {
             if (frs.indexOf(" ") != -1) {
                 while (frs.indexOf(" ") != -1) {
                     String plvr = frs.substring(0, frs.indexOf(" "));
                     frs = frs.substring(frs.indexOf(" ") + 1);
-
                     if (plvr.length() > 4) {
                         System.out.println(plvr);
-                        if (minplvr.equals("") || plvr.length() < minplvr.length()) {
+                        if (minplvr.equals("") || (plvr.length() < minplvr.length())) {
                             minplvr = plvr;
                         }
-                    }
-
-                    if (plvr.length() > maxplvr.length()) {
-                        maxplvr = plvr;
+                        if (plvr.length() > maxplvr.length()) {
+                            maxplvr = plvr;
+                        }
                     }
                 }
             }
-
-            // Processa a última palavra
             if (frs.length() > 4) {
                 System.out.println(frs);
-                if (minplvr.equals("") || frs.length() < minplvr.length()) {
+                if (minplvr.equals("") || (frs.length() < minplvr.length())) {
                     minplvr = frs;
                 }
-            }
-
-            if (frs.length() > maxplvr.length()) {
-                maxplvr = frs;
+                if (frs.length() > maxplvr.length()) {
+                    maxplvr = frs;
+                }
             }
         }
 
